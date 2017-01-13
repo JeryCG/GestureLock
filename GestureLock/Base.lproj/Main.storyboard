@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NpI-vN-9lc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="5RI-BX-NIw">
+            <objects>
+                <navigationController id="NpI-vN-9lc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0k4-Ol-oJD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cka-To-bX2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="53r-lv-imD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-509" y="-243"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a4-we-V3H">
+                                <rect key="frame" x="156" y="239" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="oJ6-1h-EwT"/>
+                                    <constraint firstAttribute="height" constant="30" id="zri-wW-WL9"/>
+                                </constraints>
+                                <state key="normal" title="设置密码"/>
+                                <connections>
+                                    <action selector="set:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0OD-bE-nJU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPq-07-IWV">
+                                <rect key="frame" x="156" y="318" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KWv-j8-ADf"/>
+                                    <constraint firstAttribute="width" constant="62" id="teP-Oe-5aQ"/>
+                                </constraints>
+                                <state key="normal" title="验证密码"/>
+                                <connections>
+                                    <action selector="verify:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iYD-zB-eud"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbd-4X-wlD">
+                                <rect key="frame" x="156" y="397" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="HBN-41-kXH"/>
+                                    <constraint firstAttribute="height" constant="30" id="LlB-bd-Cst"/>
+                                </constraints>
+                                <state key="normal" title="修改密码"/>
+                                <connections>
+                                    <action selector="modify:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m4p-n8-TM1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uPq-07-IWV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="40D-wj-JOu"/>
+                            <constraint firstItem="nbd-4X-wlD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7cL-yg-c1F"/>
+                            <constraint firstItem="nbd-4X-wlD" firstAttribute="top" secondItem="uPq-07-IWV" secondAttribute="bottom" constant="49" id="A6g-81-pbC"/>
+                            <constraint firstItem="uPq-07-IWV" firstAttribute="top" secondItem="4a4-we-V3H" secondAttribute="bottom" constant="49" id="Rbe-Fj-bHf"/>
+                            <constraint firstItem="4a4-we-V3H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mAu-b4-pKG"/>
+                            <constraint firstItem="uPq-07-IWV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tGu-IF-2vl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9j8-8s-iYR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="-243"/>
+        </scene>
+    </scenes>
+</document>
