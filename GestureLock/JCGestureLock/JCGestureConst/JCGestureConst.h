@@ -22,6 +22,7 @@
 #define JCButtonColor                 JCColor(0.f, 102.f, 255.f, .9f)
 
 UIKIT_EXTERN const CGFloat closeDuration;
+UIKIT_EXTERN const CGFloat lineWidth;
 
 UIKIT_EXTERN NSString *const JCGesturelockKey;
 

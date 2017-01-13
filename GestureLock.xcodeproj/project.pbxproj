@@ -25,6 +25,7 @@
 		C10A087E1E275E9600C53FB1 /* JCGestureIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A086E1E275E9600C53FB1 /* JCGestureIcon.m */; };
 		C10A087F1E275E9600C53FB1 /* JCGestrueLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A08711E275E9600C53FB1 /* JCGestrueLockViewController.m */; };
 		C10A08801E275E9600C53FB1 /* JCGestureLockNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A08731E275E9600C53FB1 /* JCGestureLockNavigationController.m */; };
+		C1890F4E1E2905E000DDE66D /* JCGestureMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1890F4D1E2905E000DDE66D /* JCGestureMaskView.m */; };
 		C1E659061E28744500193ADA /* JCGestureLockMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E659051E28744500193ADA /* JCGestureLockMessage.m */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,8 @@
 		C10A08711E275E9600C53FB1 /* JCGestrueLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCGestrueLockViewController.m; sourceTree = "<group>"; };
 		C10A08721E275E9600C53FB1 /* JCGestureLockNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCGestureLockNavigationController.h; sourceTree = "<group>"; };
 		C10A08731E275E9600C53FB1 /* JCGestureLockNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCGestureLockNavigationController.m; sourceTree = "<group>"; };
+		C1890F4C1E2905E000DDE66D /* JCGestureMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCGestureMaskView.h; sourceTree = "<group>"; };
+		C1890F4D1E2905E000DDE66D /* JCGestureMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCGestureMaskView.m; sourceTree = "<group>"; };
 		C1E659041E28744500193ADA /* JCGestureLockMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCGestureLockMessage.h; sourceTree = "<group>"; };
 		C1E659051E28744500193ADA /* JCGestureLockMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCGestureLockMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +163,8 @@
 		C10A086A1E275E9600C53FB1 /* JCGesturelockView */ = {
 			isa = PBXGroup;
 			children = (
+				C1890F4C1E2905E000DDE66D /* JCGestureMaskView.h */,
+				C1890F4D1E2905E000DDE66D /* JCGestureMaskView.m */,
 				C10A086D1E275E9600C53FB1 /* JCGestureIcon.h */,
 				C10A086E1E275E9600C53FB1 /* JCGestureIcon.m */,
 				C10A086B1E275E9600C53FB1 /* JCGestureBackgroundView.h */,
@@ -276,6 +281,7 @@
 				C10A087F1E275E9600C53FB1 /* JCGestrueLockViewController.m in Sources */,
 				C10A08191E2753E400C53FB1 /* main.m in Sources */,
 				C10A087E1E275E9600C53FB1 /* JCGestureIcon.m in Sources */,
+				C1890F4E1E2905E000DDE66D /* JCGestureMaskView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

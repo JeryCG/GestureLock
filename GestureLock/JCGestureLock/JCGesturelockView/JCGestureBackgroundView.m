@@ -94,6 +94,7 @@ inline static void _configMsg(JCGestureLockMessage *message,
                                                        CenterSize:size
                                                       CenterColor:JCIconDefaultColor];
         icon.selectColor = JCIconSelectedColor;
+//        icon.animationType = animationTypeMask;
         icon.tag = 300 + i;
         [self addSubview:icon];
     }
@@ -133,12 +134,12 @@ inline static void _configMsg(JCGestureLockMessage *message,
     }
     
     CAShapeLayer *sl = [CAShapeLayer new];
-    sl.frame       = self.layer.bounds;
-    sl.lineWidth   = 3.f;
-    sl.fillColor   = [UIColor clearColor].CGColor;
-    sl.strokeColor = JCIconSelectedColor.CGColor;
-    sl.lineJoin    = kCALineJoinRound;
-    sl.lineCap     = kCALineCapRound;
+    sl.frame         = self.layer.bounds;
+    sl.lineWidth     = lineWidth;
+    sl.fillColor     = [UIColor clearColor].CGColor;
+    sl.strokeColor   = JCIconSelectedColor.CGColor;
+    sl.lineJoin      = kCALineJoinRound;
+    sl.lineCap       = kCALineCapRound;
     [self.layer addSublayer:sl];
     
     UIBezierPath *path = [UIBezierPath new];

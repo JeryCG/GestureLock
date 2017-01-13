@@ -7,6 +7,7 @@
 //
 
 #import "JCGestureIcon.h"
+#import "JCGestureMaskView.h"
 
 @interface JCGestureIcon ()
 
@@ -66,6 +67,7 @@
         case animationTypeDefault: [self animationDefault]; break;
         case animationTypeShake:   [self animationShake];   break;
         case animationTypeScale:   [self animationScale];   break;
+        case animationTypeMask:    [self animationMask];    break;
         case animationTypeNone: break;
     }
 }
@@ -75,11 +77,10 @@
     
     CABasicAnimation *defaultAnimation = [CABasicAnimation animation];
     defaultAnimation.keyPath = @"transform.scale";
-    defaultAnimation.duration = .3f;
+    defaultAnimation.duration = .4f;
     defaultAnimation.fromValue = [NSNumber numberWithFloat:1.f];
     defaultAnimation.toValue = [NSNumber numberWithFloat:MIN(1.5f, scale)];
     defaultAnimation.autoreverses = YES;
-    defaultAnimation.removedOnCompletion = YES;
     
     [_centerLayer addAnimation:defaultAnimation forKey:@"default"];
 }
@@ -97,7 +98,6 @@
     shakeAnimation.duration = .2f;
     shakeAnimation.repeatCount = 2.f;
     shakeAnimation.values = values;
-    shakeAnimation.removedOnCompletion = YES;
     
     CAShapeLayer *sl = (CAShapeLayer *)self.layer;
     [sl addAnimation:shakeAnimation forKey:@"shake"];
@@ -109,22 +109,26 @@
     CGFloat height   = self.bounds.size.height;
     CGFloat center_x = width / 2;
     CGFloat center_y = height / 2;
+    CGFloat reduce   = .7f;
+    CGFloat enlarge  = 1.2f;
     
     NSArray *scaleValues = @[
-                             [NSValue valueWithCGSize:CGSizeMake(width * .7f, width * .7f)],
-                             [NSValue valueWithCGSize:CGSizeMake(width * 1.2f, width * 1.2f)],
+                             [NSValue valueWithCGSize:CGSizeMake(width * reduce,
+                                                                 width * reduce)],
+                             [NSValue valueWithCGSize:CGSizeMake(width * enlarge,
+                                                                 width * enlarge)],
                              [NSValue valueWithCGSize:CGSizeMake(width, width)]
                              ];
     NSArray *radiusValues = @[
-                              @(radius * .7f),
-                              @(radius * 1.2f),
+                              @(radius * reduce),
+                              @(radius * enlarge),
                               @(radius)
                               ];
     NSArray *positionValues = @[
-                                [NSValue valueWithCGPoint:CGPointMake(center_x * .7f,
-                                                                      center_y * .7f)],
-                                [NSValue valueWithCGPoint:CGPointMake(center_x * 1.2f,
-                                                                      center_y * 1.2f)],
+                                [NSValue valueWithCGPoint:CGPointMake(center_x * reduce,
+                                                                      center_y * reduce)],
+                                [NSValue valueWithCGPoint:CGPointMake(center_x * enlarge,
+                                                                      center_y * enlarge)],
                                 [NSValue valueWithCGPoint:CGPointMake(center_x, center_y)]
                                 ];
     
@@ -140,18 +144,38 @@
     group.animations = @[scaleAnimation, radiusAnimation];
     group.duration = .4f;
     group.repeatCount = 1.f;
-    group.removedOnCompletion = YES;
     
     CAKeyframeAnimation *positionAnimation = [CAKeyframeAnimation animation];
+    positionAnimation.keyPath  = @"position";
     positionAnimation.duration = .4f;
-    positionAnimation.keyPath = @"position";
     positionAnimation.values = positionValues;
-    positionAnimation.removedOnCompletion = YES;
     
     CAShapeLayer *sl = (CAShapeLayer *)self.layer;
     
-    [sl addAnimation:group forKey:@"ggroup"];
+    [sl addAnimation:group forKey:@"group"];
     [_centerLayer addAnimation:positionAnimation forKey:@"position"];
+}
+
+- (void)animationMask {
+    CGFloat width  = self.bounds.size.width;
+    CGFloat height = self.bounds.size.height;
+    CGPoint center = CGPointMake(width / 2, height / 2);
+    
+    JCGestureMaskView *mask = [JCGestureMaskView new];
+    mask.centerColor = _selectColor;
+    mask.edgeColor   = [UIColor clearColor];
+    mask.frame = CGRectMake(0, 0, width, height);
+    mask.center = center;
+    [self addSubview:mask];
+    
+    CABasicAnimation *scaleAnimation = [CABasicAnimation animation];
+    scaleAnimation.keyPath = @"transform.scale";
+    scaleAnimation.duration = .4f;
+    scaleAnimation.fromValue = [NSNumber numberWithFloat:0.f];
+    scaleAnimation.toValue = [NSNumber numberWithFloat:1.f];
+    scaleAnimation.removedOnCompletion = NO;
+    scaleAnimation.fillMode = kCAFillModeForwards;
+    [mask.layer addAnimation:scaleAnimation forKey:@"scaleAnimation"];
 }
 
 @end

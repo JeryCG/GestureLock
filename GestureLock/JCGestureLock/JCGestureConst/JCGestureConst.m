@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 
 const CGFloat closeDuration = 1.f;
+const CGFloat lineWidth     = 3.f;
 
 NSString *const JCGesturelockKey    = @"JCGesturelockKey";
 
