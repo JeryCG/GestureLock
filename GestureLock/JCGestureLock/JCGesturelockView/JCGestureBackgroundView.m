@@ -94,7 +94,7 @@ inline static void _configMsg(JCGestureLockMessage *message,
                                                        CenterSize:size
                                                       CenterColor:JCIconDefaultColor];
         icon.selectColor = JCIconSelectedColor;
-//        icon.animationType = animationTypeMask;
+        icon.animationType = animationTypeButton;
         icon.tag = 300 + i;
         [self addSubview:icon];
     }

@@ -28,7 +28,7 @@
             components[i * 4 + j] = tmpcomponents[j];
         }
     }
-    components[3] = .24f;
+    components[3] = .3f;
     
     gradient = CGGradientCreateWithColorComponents(rgb, components, NULL, sizeof(components)/(sizeof(components[0])*4));
     CGColorSpaceRelease(rgb);

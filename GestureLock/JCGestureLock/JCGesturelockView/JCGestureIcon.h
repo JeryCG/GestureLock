@@ -10,6 +10,7 @@
 
 typedef NS_ENUM(NSUInteger, JCGestureIconAnimationType){
     animationTypeDefault,
+    animationTypeTouch,
     animationTypeShake,
     animationTypeScale,
     animationTypeMask,

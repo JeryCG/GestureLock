@@ -65,10 +65,11 @@
     
     switch (_animationType) {
         case animationTypeDefault: [self animationDefault]; break;
+        case animationTypeTouch:   [self animationTouch];   break;
         case animationTypeShake:   [self animationShake];   break;
         case animationTypeScale:   [self animationScale];   break;
         case animationTypeMask:    [self animationMask];    break;
-        case animationTypeNone: break;
+        case animationTypeNone:                             break;
     }
 }
 
@@ -83,6 +84,18 @@
     defaultAnimation.autoreverses = YES;
     
     [_centerLayer addAnimation:defaultAnimation forKey:@"default"];
+}
+
+- (void)animationTouch {
+    [UIView animateWithDuration:.4f
+                          delay:0
+         usingSpringWithDamping:.4f
+          initialSpringVelocity:.5f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.transform = CGAffineTransformMakeScale(.9f, .9f);
+                     }
+                     completion:nil];
 }
 
 - (void)animationShake {
