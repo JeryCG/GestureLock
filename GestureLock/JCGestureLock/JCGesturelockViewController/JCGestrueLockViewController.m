@@ -225,9 +225,8 @@ static BOOL _isModifyPassword = NO;
     NSString *animationMessage = message.animationMessage;
     NSString *animationImage   = message.animationImage;
     
-    if (isSucceed == NO) {
-        [self msgShake:NO];
-    } else {
+    if (isSucceed == NO)    [self msgShake:NO];
+    else {
        [self msgShake:YES];
         _motionlessMessage = message.motionlessMessage;
     }

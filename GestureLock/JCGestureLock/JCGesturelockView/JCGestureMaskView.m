@@ -11,6 +11,7 @@
 @implementation JCGestureMaskView
 
 - (void)drawRect:(CGRect)rect {
+
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGGradientRef gradient;
